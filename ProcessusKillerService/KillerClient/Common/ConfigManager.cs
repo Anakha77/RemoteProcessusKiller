@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 using Android.App;
 
@@ -17,9 +18,10 @@ namespace KillerClient.Common
             if (ConfigFileExists)
                 return XDocument.Load(ConfigFilePath);
 
-            var doc = new XDocument();
-            doc.Add(new XDeclaration("1.0", "utf-8", null));
-            doc.Add(new XElement("Config"), new XElement("ServerAdress"), new XElement("ServerPort"), new XElement("ServerPin"));
+            var dec = new XDeclaration("1.0", "utf-8", null);
+            var doc = new XDocument(dec);
+            doc.Add(new XElement("Config", new XElement("ServerAdress"), new XElement("ServerPort"), new XElement("ServerPin")));
+
             doc.Save(ConfigFilePath);
 
             return doc;
@@ -36,9 +38,9 @@ namespace KillerClient.Common
 
             if (doc == null) return;
 
-            doc.Element("ServerAdress").Value = serverAdress;
-            doc.Element("ServerPort").Value = serverPort;
-            doc.Element("ServerPin").Value = serverPin;
+            doc.Descendants("ServerAdress").FirstOrDefault().Value = serverAdress;
+            doc.Descendants("ServerPort").FirstOrDefault().Value = serverPort;
+            doc.Descendants("ServerPin").FirstOrDefault().Value = serverPin;
 
             doc.Save(ConfigFilePath);
         }
@@ -49,10 +51,12 @@ namespace KillerClient.Common
                 CreateConfigFile();
 
             var doc = GetConfigFile();
-            var dico = new Dictionary<string, string>();
-            dico.Add("ServerAdress", doc.Element("ServerAdress").Value);
-            dico.Add("ServerPort", doc.Element("ServerPort").Value);
-            dico.Add("ServerPin", doc.Element("ServerPin").Value);
+            var dico = new Dictionary<string, string>
+            {
+                {"ServerAdress", doc.Descendants("ServerAdress").FirstOrDefault()?.Value},
+                {"ServerPort", doc.Descendants("ServerPort").FirstOrDefault()?.Value},
+                {"ServerPin", doc.Descendants("ServerPin").FirstOrDefault()?.Value}
+            };
             return dico;
         }
     }

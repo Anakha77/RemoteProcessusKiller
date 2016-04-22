@@ -4,7 +4,6 @@ using log4net;
 
 namespace ProcessusKillerService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class KillerService : IKillerService
     {
         public ILog Log { get; set; }

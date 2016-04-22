@@ -10,10 +10,6 @@ namespace KillerClient
     [Activity(Label = "KillerClient", MainLauncher = true, Icon = "@drawable/iconKiller")]
     public class MainActivity : Activity
     {
-        private static string _serverAdresse;
-        private static string _serverPort;
-        private static string _serverPin;
-
         private ProcessusAdapter Adapter;
         private List<Processus> Processus;
         private ListView ProcessusListView;
@@ -33,16 +29,10 @@ namespace KillerClient
                 StartActivity(new Intent(this, typeof (ConfigActivity)));
             };
 
-            // ask for config if not set
             if (!ConfigManager.ConfigFileExists)
             {
                 StartActivity(new Intent(this, typeof(ConfigActivity)));
             }
-
-            //var config = ConfigManager.LoadConfiguration();
-            //_serverAdresse = config["ServerAdress"];
-            //_serverPort = config["ServerPort"];
-            //_serverPin = config["ServerPin"];
         }
 
         protected override void OnResume()
