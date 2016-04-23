@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerServiceTestProject", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerClient", "KillerClient\KillerClient.csproj", "{FEF441FF-B56D-48E3-BDFE-F5410F52733A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsKillerService", "WindowsKillerService\WindowsKillerService.csproj", "{117D9241-31D2-4E5A-BCB3-F36256C01976}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{FEF441FF-B56D-48E3-BDFE-F5410F52733A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEF441FF-B56D-48E3-BDFE-F5410F52733A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEF441FF-B56D-48E3-BDFE-F5410F52733A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

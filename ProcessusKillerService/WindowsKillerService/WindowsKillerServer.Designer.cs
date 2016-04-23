@@ -1,6 +1,6 @@
-﻿namespace ProcessusKillerService
+﻿namespace WindowsKillerService
 {
-    partial class WindowsKillerService
+    partial class WindowsKillerServer
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "WindowsKillerService";
+            // 
+            // WindowsKillerServer
+            // 
+            this.ServiceName = "Windows Killer Service";
+
         }
 
         #endregion

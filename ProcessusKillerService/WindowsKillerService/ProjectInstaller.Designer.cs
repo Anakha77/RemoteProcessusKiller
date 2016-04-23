@@ -1,4 +1,4 @@
-﻿namespace ProcessusKillerService
+﻿namespace WindowsKillerService
 {
     partial class ProjectInstaller
     {
@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
+            this.KillerServiceProcessInstaller = new System.ServiceProcess.ServiceProcessInstaller();
+            this.KillerServiceInstaller = new System.ServiceProcess.ServiceInstaller();
             // 
-            // serviceProcessInstaller1
+            // KillerServiceProcessInstaller
             // 
-            this.serviceProcessInstaller1.Password = null;
-            this.serviceProcessInstaller1.Username = null;
+            this.KillerServiceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.KillerServiceProcessInstaller.Password = null;
+            this.KillerServiceProcessInstaller.Username = null;
             // 
-            // serviceInstaller1
+            // KillerServiceInstaller
             // 
-            this.serviceInstaller1.ServiceName = "WindowsKillerService";
+            this.KillerServiceInstaller.DisplayName = "Allow browsing processus and killing processus from the list";
+            this.KillerServiceInstaller.ServiceName = "Windows Killer Service";
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1,
-            this.serviceInstaller1});
+            this.KillerServiceProcessInstaller,
+            this.KillerServiceInstaller});
 
         }
 
         #endregion
-
-        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
-        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
+        public System.ServiceProcess.ServiceInstaller KillerServiceInstaller;
+        public System.ServiceProcess.ServiceProcessInstaller KillerServiceProcessInstaller;
     }
 }
