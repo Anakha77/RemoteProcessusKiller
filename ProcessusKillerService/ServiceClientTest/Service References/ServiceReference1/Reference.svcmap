@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f23e6eb-58eb-4cf9-b710-a1ba76eb90e0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/ProcessusKillerService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="a6f0af8d-0d1f-4d00-95b5-39a1e59a1906" SourceId="1" SourceUrl="http://localhost:8733/ProcessusKillerService/?xsd=xsd1" />
+    <MetadataFile FileName="KillerService.wsdl" MetadataType="Wsdl" ID="c52a050c-aef2-42e6-8e45-a6234c2983f8" SourceId="1" SourceUrl="http://localhost:8733/ProcessusKillerService/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="62e80c0d-6591-4f1c-8f46-4fede3c672cb" SourceId="1" SourceUrl="http://localhost:8733/ProcessusKillerService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="78e8ef6a-42fd-4088-a9a8-0398c1ad87d7" SourceId="1" SourceUrl="http://localhost:8733/ProcessusKillerService/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="4201e635-e297-4f8d-afdf-801eaf22a447" SourceId="1" SourceUrl="http://localhost:8733/ProcessusKillerService/?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

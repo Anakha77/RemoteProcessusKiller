@@ -41,6 +41,22 @@ namespace KillerClient
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int theme_devicedefault_background = 2131034112;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -66,44 +82,59 @@ namespace KillerClient
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f05000c
-			public const int NameText = 2131034124;
+			// aapt resource value: 0x7f070011
+			public const int IdText = 2131165201;
 			
-			// aapt resource value: 0x7f050008
-			public const int Reload = 2131034120;
+			// aapt resource value: 0x7f070010
+			public const int NameText = 2131165200;
 			
-			// aapt resource value: 0x7f050006
-			public const int btnSave = 2131034118;
+			// aapt resource value: 0x7f070008
+			public const int Reload = 2131165192;
 			
-			// aapt resource value: 0x7f050009
-			public const int btnSettings = 2131034121;
+			// aapt resource value: 0x7f070006
+			public const int btnSave = 2131165190;
 			
-			// aapt resource value: 0x7f050004
-			public const int lblPin = 2131034116;
+			// aapt resource value: 0x7f070009
+			public const int btnSettings = 2131165193;
 			
-			// aapt resource value: 0x7f050002
-			public const int lblPort = 2131034114;
+			// aapt resource value: 0x7f070004
+			public const int lblPin = 2131165188;
 			
-			// aapt resource value: 0x7f050000
-			public const int lblServer = 2131034112;
+			// aapt resource value: 0x7f070002
+			public const int lblPort = 2131165186;
 			
-			// aapt resource value: 0x7f050007
-			public const int linearLayout1 = 2131034119;
+			// aapt resource value: 0x7f070000
+			public const int lblServer = 2131165184;
 			
-			// aapt resource value: 0x7f05000a
-			public const int listProcessus = 2131034122;
+			// aapt resource value: 0x7f070007
+			public const int linearLayout1 = 2131165191;
 			
-			// aapt resource value: 0x7f05000b
-			public const int lstItemProcess = 2131034123;
+			// aapt resource value: 0x7f07000a
+			public const int linearLayout2 = 2131165194;
 			
-			// aapt resource value: 0x7f050005
-			public const int pin = 2131034117;
+			// aapt resource value: 0x7f07000e
+			public const int listProcessus = 2131165198;
 			
-			// aapt resource value: 0x7f050003
-			public const int port = 2131034115;
+			// aapt resource value: 0x7f07000f
+			public const int lstItemProcess = 2131165199;
 			
-			// aapt resource value: 0x7f050001
-			public const int server = 2131034113;
+			// aapt resource value: 0x7f070005
+			public const int pin = 2131165189;
+			
+			// aapt resource value: 0x7f070003
+			public const int port = 2131165187;
+			
+			// aapt resource value: 0x7f070001
+			public const int server = 2131165185;
+			
+			// aapt resource value: 0x7f07000d
+			public const int swipeLayout = 2131165197;
+			
+			// aapt resource value: 0x7f07000b
+			public const int textView1 = 2131165195;
+			
+			// aapt resource value: 0x7f07000c
+			public const int textView2 = 2131165196;
 			
 			static Id()
 			{
@@ -140,35 +171,35 @@ namespace KillerClient
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
-			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int ApplicationName = 2130968576;
 			
 			// aapt resource value: 0x7f040009
-			public const int ListProcess = 2130968585;
-			
-			// aapt resource value: 0x7f040006
-			public const int Pin = 2130968582;
-			
-			// aapt resource value: 0x7f040005
-			public const int Port = 2130968581;
+			public const int ListProcessId = 2130968585;
 			
 			// aapt resource value: 0x7f040008
-			public const int Reload = 2130968584;
+			public const int ListProcessName = 2130968584;
 			
-			// aapt resource value: 0x7f040007
-			public const int Save = 2130968583;
-			
-			// aapt resource value: 0x7f040003
-			public const int Server = 2130968579;
-			
-			// aapt resource value: 0x7f040002
-			public const int server_preferences = 2130968578;
+			// aapt resource value: 0x7f040005
+			public const int Pin = 2130968581;
 			
 			// aapt resource value: 0x7f040004
-			public const int summary_server = 2130968580;
+			public const int Port = 2130968580;
+			
+			// aapt resource value: 0x7f040007
+			public const int Reload = 2130968583;
+			
+			// aapt resource value: 0x7f040006
+			public const int Save = 2130968582;
+			
+			// aapt resource value: 0x7f040002
+			public const int Server = 2130968578;
+			
+			// aapt resource value: 0x7f040001
+			public const int server_preferences = 2130968577;
+			
+			// aapt resource value: 0x7f040003
+			public const int summary_server = 2130968579;
 			
 			static String()
 			{
@@ -176,6 +207,22 @@ namespace KillerClient
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int Theme_Custom = 2131099648;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

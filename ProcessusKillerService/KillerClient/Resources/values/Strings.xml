@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="Hello">Hello World, Click Me!</string>
-  <string name="ApplicationName">KillerClient</string>
+  <string name="ApplicationName">Killer Client</string>
   <string name="server_preferences">Configuration serveur</string>
   <string name="Server">Server IP/Name :</string>
   <string name="summary_server">Nom du serveur</string>
@@ -9,5 +8,6 @@
   <string name="Pin">Code pin :</string>
   <string name="Save">Sauvegarder</string>
   <string name="Reload">Actualiser</string>
-  <string name="ListProcess">Processus en cours d\'exécution</string>
+  <string name="ListProcessName">Nom</string>
+  <string name="ListProcessId">PID</string>
 </resources>

@@ -6,6 +6,9 @@ namespace ProcessusKillerService
     public class ProcessusModel
     {
         [DataMember]
-        public string StringValue { get; set; }
+        public string Name { get; set; }
+
+        [DataMember]
+        public int Id { get; set; }
     }
 }

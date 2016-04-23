@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
-using System.Threading.Tasks;
+using System.Linq;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProcessusKillerService;
 
@@ -36,19 +37,36 @@ namespace KillerServiceTestProject
         }
 
         [TestMethod]
-        public void Should_kill_process_When_calling_StopProcessus_with_name()
+        public void Should_kill_process_When_calling_StopProcessusByName()
         {
             // Arrange
             var ks = new KillerService();
             Process.Start("Calc");
-            Task.Delay(2000);
+            Thread.Sleep(2000);
 
             // Act
-            ks.StopProcessus("Calculator");
-            Task.Delay(2000);
+            ks.StopProcessusByName("Calculator");
+            Thread.Sleep(2000);
 
             // Assert
             Assert.IsTrue(Process.GetProcessesByName("Calculator").Length.Equals(0));
+        }
+
+        [TestMethod]
+        public void Should_kill_process_When_calling_StopProcessusById()
+        {
+            // Arrange
+            var ks = new KillerService();
+            Process.Start("Calc");
+            Thread.Sleep(2000);
+            var pCalc = Process.GetProcessesByName("Calculator").FirstOrDefault();
+
+            // Act
+            ks.StopProcessusById(pCalc.Id);
+            Thread.Sleep(2000);
+
+            // Assert
+            Assert.IsNull(Process.GetProcesses().FirstOrDefault(p => p.Id == pCalc.Id));
         }
     }
 }

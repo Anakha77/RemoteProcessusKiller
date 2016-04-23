@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerClient", "KillerClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsKillerService", "WindowsKillerService\WindowsKillerService.csproj", "{117D9241-31D2-4E5A-BCB3-F36256C01976}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C92DE647-CAE9-46AA-9A5B-61A323C0C98E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +42,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A82D7223-6B84-4561-8193-2BF03CDECD5A} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
+		{A7B6DB5F-D55C-4481-8756-3526819F4FDB} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
+		{FEF441FF-B56D-48E3-BDFE-F5410F52733A} = {C92DE647-CAE9-46AA-9A5B-61A323C0C98E}
+		{117D9241-31D2-4E5A-BCB3-F36256C01976} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
 	EndGlobalSection
 EndGlobal

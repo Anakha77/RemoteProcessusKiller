@@ -20,16 +20,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
-    <TextView
-        android:text="@string/ListProcess"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20.0dp" />
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:text="@string/ListProcessName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="@string/ListProcessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="right"
+            android:layout_weight="2"
+            android:gravity="center" />
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listProcessus" />
+        android:id="@+id/swipeLayout">
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listProcessus" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

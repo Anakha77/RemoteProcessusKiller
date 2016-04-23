@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ProcessusKillerService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProcessusKillerService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProcessusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcessusModel" nillable="true" type="tns:ProcessusModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcessusModel" nillable="true" type="tns:ArrayOfProcessusModel" />
+  <xs:complexType name="ProcessusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessusModel" nillable="true" type="tns:ProcessusModel" />
+</xs:schema>

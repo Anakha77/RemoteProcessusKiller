@@ -15,6 +15,9 @@ namespace ProcessusKillerService
         ProcessusModel[] GetProcessusByName(string name);
 
         [OperationContract]
-        bool StopProcessus(string name);
+        bool StopProcessusByName(string name);
+
+        [OperationContract]
+        bool StopProcessusById(int id);
     }
 }
