@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.ServiceModel;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+using ProcessusKillerService;
 
 namespace WindowsKillerService
 {
     public partial class WindowsKillerServer : ServiceBase
     {
+        public ServiceHost SvcHost;
+         
         public WindowsKillerServer()
         {
             InitializeComponent();
@@ -19,10 +15,17 @@ namespace WindowsKillerService
 
         protected override void OnStart(string[] args)
         {
+            SvcHost?.Close();
+            SvcHost = new ServiceHost(typeof(KillerService));
+            SvcHost.Open();
         }
 
         protected override void OnStop()
         {
+            if (SvcHost == null) return;
+
+            SvcHost.Close();
+            SvcHost = null;
         }
     }
 }
