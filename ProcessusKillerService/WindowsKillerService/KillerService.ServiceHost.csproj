@@ -7,8 +7,8 @@
     <ProjectGuid>{117D9241-31D2-4E5A-BCB3-F36256C01976}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsKillerService</RootNamespace>
-    <AssemblyName>WindowsKillerService</AssemblyName>
+    <RootNamespace>KillerService.ServiceHost</RootNamespace>
+    <AssemblyName>KillerService.ServiceHost</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
@@ -64,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
@@ -74,9 +79,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProcessusKillerService\ProcessusKillerService.csproj">
+    <ProjectReference Include="..\KillerService.ServiceLibrary\KillerService.ServiceLibrary.csproj">
+      <Project>{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}</Project>
+      <Name>KillerService.ServiceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProcessusKillerService\KillerService.Wcf.csproj">
       <Project>{a82d7223-6b84-4561-8193-2bf03cdecd5a}</Project>
-      <Name>ProcessusKillerService</Name>
+      <Name>KillerService.Wcf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

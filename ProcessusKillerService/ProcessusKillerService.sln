@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessusKillerService", "ProcessusKillerService\ProcessusKillerService.csproj", "{A82D7223-6B84-4561-8193-2BF03CDECD5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.Wcf", "ProcessusKillerService\KillerService.Wcf.csproj", "{A82D7223-6B84-4561-8193-2BF03CDECD5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerServiceTestProject", "KillerServiceTestProject\KillerServiceTestProject.csproj", "{A7B6DB5F-D55C-4481-8756-3526819F4FDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.TestProject", "KillerServiceTestProject\KillerService.TestProject.csproj", "{A7B6DB5F-D55C-4481-8756-3526819F4FDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerClient", "KillerClient\KillerClient.csproj", "{FEF441FF-B56D-48E3-BDFE-F5410F52733A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsKillerService", "WindowsKillerService\WindowsKillerService.csproj", "{117D9241-31D2-4E5A-BCB3-F36256C01976}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.ServiceHost", "WindowsKillerService\KillerService.ServiceHost.csproj", "{117D9241-31D2-4E5A-BCB3-F36256C01976}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C92DE647-CAE9-46AA-9A5B-61A323C0C98E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.ServiceLibrary", "KillerService.ServiceLibrary\KillerService.ServiceLibrary.csproj", "{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.IoC", "KillerService.IoC\KillerService.IoC.csproj", "{1DCB6E1A-059A-464D-B1D7-A776912C71C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KillerService.Model", "KillerService.Model\KillerService.Model.csproj", "{4D9AA033-F86A-4368-9404-EE609179EE2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{117D9241-31D2-4E5A-BCB3-F36256C01976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DCB6E1A-059A-464D-B1D7-A776912C71C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCB6E1A-059A-464D-B1D7-A776912C71C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCB6E1A-059A-464D-B1D7-A776912C71C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCB6E1A-059A-464D-B1D7-A776912C71C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9AA033-F86A-4368-9404-EE609179EE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9AA033-F86A-4368-9404-EE609179EE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9AA033-F86A-4368-9404-EE609179EE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9AA033-F86A-4368-9404-EE609179EE2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +66,8 @@ Global
 		{A7B6DB5F-D55C-4481-8756-3526819F4FDB} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
 		{FEF441FF-B56D-48E3-BDFE-F5410F52733A} = {C92DE647-CAE9-46AA-9A5B-61A323C0C98E}
 		{117D9241-31D2-4E5A-BCB3-F36256C01976} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
+		{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
+		{1DCB6E1A-059A-464D-B1D7-A776912C71C3} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
+		{4D9AA033-F86A-4368-9404-EE609179EE2D} = {75B2F7C0-EC6C-4D59-A2DC-3D81392C0234}
 	EndGlobalSection
 EndGlobal

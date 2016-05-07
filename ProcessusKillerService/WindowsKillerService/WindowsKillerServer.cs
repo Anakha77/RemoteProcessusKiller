@@ -1,12 +1,10 @@
-﻿using System.ServiceModel;
-using System.ServiceProcess;
-using ProcessusKillerService;
+﻿using System.ServiceProcess;
 
-namespace WindowsKillerService
+namespace KillerService.ServiceHost
 {
     public partial class WindowsKillerServer : ServiceBase
     {
-        public ServiceHost SvcHost;
+        public System.ServiceModel.ServiceHost SvcHost;
          
         public WindowsKillerServer()
         {
@@ -16,7 +14,7 @@ namespace WindowsKillerService
         protected override void OnStart(string[] args)
         {
             SvcHost?.Close();
-            SvcHost = new ServiceHost(typeof(KillerService));
+            SvcHost = new System.ServiceModel.ServiceHost(typeof(ServiceLibrary.KillerService));
             SvcHost.Open();
         }
 

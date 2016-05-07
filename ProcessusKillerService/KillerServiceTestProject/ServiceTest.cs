@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProcessusKillerService;
 
-namespace KillerServiceTestProject
+namespace KillerService.TestProject
 {
     [TestClass]
     public class ServiceTest
@@ -13,7 +12,7 @@ namespace KillerServiceTestProject
         public void Should_return_non_empty_array_of_process_When_calling_GetProcessus_method()
         {
             // Arrange
-            var ks = new KillerService();
+            var ks = new ServiceLibrary.KillerService();
 
             // Act
             var processus = ks.GetProcessus();
@@ -26,7 +25,7 @@ namespace KillerServiceTestProject
         public void Should_return_non_empty_array_of_process_When_calling_GetProcessus_method_with_name()
         {
             // Arrange
-            var ks = new KillerService();
+            var ks = new ServiceLibrary.KillerService();
             var process = Process.GetCurrentProcess();
 
             // Act
@@ -40,7 +39,7 @@ namespace KillerServiceTestProject
         public void Should_kill_process_When_calling_StopProcessusByName()
         {
             // Arrange
-            var ks = new KillerService();
+            var ks = new ServiceLibrary.KillerService();
             Process.Start("Calc");
             Thread.Sleep(2000);
 
@@ -56,7 +55,7 @@ namespace KillerServiceTestProject
         public void Should_kill_process_When_calling_StopProcessusById()
         {
             // Arrange
-            var ks = new KillerService();
+            var ks = new ServiceLibrary.KillerService();
             Process.Start("Calc");
             Thread.Sleep(2000);
             var pCalc = Process.GetProcessesByName("Calculator").FirstOrDefault();

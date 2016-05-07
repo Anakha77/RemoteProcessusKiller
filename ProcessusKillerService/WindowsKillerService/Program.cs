@@ -1,6 +1,6 @@
 ﻿using System.ServiceProcess;
 
-namespace WindowsKillerService
+namespace KillerService.ServiceHost
 {
     static class Program
     {

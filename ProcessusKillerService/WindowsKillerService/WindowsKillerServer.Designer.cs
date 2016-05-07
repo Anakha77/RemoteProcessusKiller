@@ -1,4 +1,4 @@
-﻿namespace WindowsKillerService
+﻿namespace KillerService.ServiceHost
 {
     partial class WindowsKillerServer
     {

@@ -6,8 +6,8 @@
     <ProjectGuid>{A7B6DB5F-D55C-4481-8756-3526819F4FDB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KillerServiceTestProject</RootNamespace>
-    <AssemblyName>KillerServiceTestProject</AssemblyName>
+    <RootNamespace>KillerService.TestProject</RootNamespace>
+    <AssemblyName>KillerService.TestProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -54,10 +58,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProcessusKillerService\ProcessusKillerService.csproj">
-      <Project>{A82D7223-6B84-4561-8193-2BF03CDECD5A}</Project>
-      <Name>ProcessusKillerService</Name>
+    <ProjectReference Include="..\KillerService.Model\KillerService.Model.csproj">
+      <Project>{4d9aa033-f86a-4368-9404-ee609179ee2d}</Project>
+      <Name>KillerService.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KillerService.ServiceLibrary\KillerService.ServiceLibrary.csproj">
+      <Project>{BDD78AE8-4455-4C49-B0E2-F6DD63C22D9D}</Project>
+      <Name>KillerService.ServiceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProcessusKillerService\KillerService.Wcf.csproj">
+      <Project>{A82D7223-6B84-4561-8193-2BF03CDECD5A}</Project>
+      <Name>KillerService.Wcf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

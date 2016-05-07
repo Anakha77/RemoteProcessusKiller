@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using KillerClient.KillerService;
+using KillerClient.Web_References.KillerService;
 
 namespace KillerClient.Common
 {
@@ -35,9 +35,9 @@ namespace KillerClient.Common
             GetService().StopProcessusById(processusId, true, out requestResult, out requestResultSpecified);
         }
 
-        private static KillerService.KillerService GetService()
+        private static KillerService GetService()
         {
-            var service = new KillerService.KillerService();
+            var service = new KillerService();
             var config = ConfigManager.LoadConfiguration();
             service.Url = $"http://{config["ServerAdress"]}:{config["ServerPort"]}/ProcessusKillerService/";
             return service;

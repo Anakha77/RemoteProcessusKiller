@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace ProcessusKillerService
+namespace KillerService.Wcf
 {
     [DataContract]
     public class ProcessusModel

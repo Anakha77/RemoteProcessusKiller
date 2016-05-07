@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
+using KillerService.Model;
 using log4net;
 
-namespace ProcessusKillerService
+namespace KillerService.ServiceLibrary
 {
     public class KillerService : IKillerService
     {
@@ -14,7 +15,7 @@ namespace ProcessusKillerService
         /// <returns></returns>
         public ProcessusModel[] GetProcessus()
         {
-            return System.Diagnostics.Process.GetProcesses().Where(p => p.ProcessName != "WindowsKillerService").Select(p => new ProcessusModel {Name = p.ProcessName, Id = p.Id}).ToArray();
+            return System.Diagnostics.Process.GetProcesses().Select(p => new ProcessusModel {Name = p.ProcessName, Id = p.Id}).ToArray();
         }
 
         /// <summary>
