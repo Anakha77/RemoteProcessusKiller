@@ -55,10 +55,6 @@
       <Project>{bdd78ae8-4455-4c49-b0e2-f6dd63c22d9d}</Project>
       <Name>KillerService.ServiceLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProcessusKillerService\KillerService.Wcf.csproj">
-      <Project>{a82d7223-6b84-4561-8193-2bf03cdecd5a}</Project>
-      <Name>KillerService.Wcf</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

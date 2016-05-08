@@ -14,7 +14,7 @@ namespace KillerService.ServiceHost
         protected override void OnStart(string[] args)
         {
             SvcHost?.Close();
-            SvcHost = new System.ServiceModel.ServiceHost(typeof(ServiceLibrary.KillerService));
+            SvcHost = new System.ServiceModel.ServiceHost(typeof(Wcf.WcfKillerService));
             SvcHost.Open();
         }
 

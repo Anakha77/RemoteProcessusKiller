@@ -5,10 +5,17 @@ namespace KillerService.Wcf
     [DataContract]
     public class ProcessusModel
     {
-        [DataMember]
-        public string Name { get; set; }
+        private readonly Model.ProcessusModel _processusModel;
+
+        public ProcessusModel(Model.ProcessusModel processusModel)
+        {
+            _processusModel = processusModel;
+        }
 
         [DataMember]
-        public int Id { get; set; }
+        public string Name => _processusModel.Name;
+
+        [DataMember]
+        public int Id => _processusModel.Id;
     }
 }

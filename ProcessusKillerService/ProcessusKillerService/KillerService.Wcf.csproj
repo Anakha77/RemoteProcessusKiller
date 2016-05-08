@@ -69,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KillerService.IoC\KillerService.IoC.csproj">
+      <Project>{1dcb6e1a-059a-464d-b1d7-a776912c71c3}</Project>
+      <Name>KillerService.IoC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KillerService.Model\KillerService.Model.csproj">
       <Project>{4D9AA033-F86A-4368-9404-EE609179EE2D}</Project>
       <Name>KillerService.Model</Name>

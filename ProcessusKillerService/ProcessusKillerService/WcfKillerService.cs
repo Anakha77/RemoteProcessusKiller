@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Reflection;
 using log4net;
 using Ninject;
 
@@ -13,16 +12,15 @@ namespace KillerService.Wcf
 
         public WcfKillerService()
         {
-            using (var kernel = new StandardKernel())
+            using (var kernel = new StandardKernel(new IoC.BindingModule()))
             {
-                kernel.Load(Assembly.GetExecutingAssembly());
                 _killerService = kernel.Get<ServiceLibrary.IKillerService>();
             }
         }
 
         public ProcessusModel[] GetProcessus()
         {
-            return _killerService.GetProcessus().Where(p => p.Name != "WindowsKillerService").Select(p => new ProcessusModel {Id = p.Id, Name = p.Name}).ToArray();
+            return _killerService.GetProcessus().Where(p => p.Name != "WindowsKillerService").Select(p => new ProcessusModel(p)).ToArray();
         }
 
         public ProcessusModel[] GetProcessusByName(string name)
