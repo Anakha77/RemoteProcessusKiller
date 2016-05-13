@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKillerService.cs" />
+    <Compile Include="JsonParser.cs" />
     <Compile Include="KillerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using KillerService.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KillerService.TestProject
@@ -8,6 +10,8 @@ namespace KillerService.TestProject
     [TestClass]
     public class ServiceTest
     {
+        const string Json = "[{\"Id\":1,\"Name\":\"Processus1\"},{\"Id\":2,\"Name\":\"Processus2\"}]";
+
         [TestMethod]
         public void Should_return_non_empty_array_of_process_When_calling_GetProcessus_method()
         {
@@ -66,6 +70,34 @@ namespace KillerService.TestProject
 
             // Assert
             Assert.IsNull(Process.GetProcesses().FirstOrDefault(p => p.Id == pCalc.Id));
+        }
+
+        [TestMethod]
+        public void Should_return_serialized_json_When_serialize_array_of_processuses()
+        {
+            // Arrange
+            var processuses = new[]
+            {new ProcessusModel {Id = 1, Name = "Processus1"}, new ProcessusModel {Id = 2, Name = "Processus2"}};
+
+            // Act
+            var serialized = ServiceLibrary.JsonParser.Serialize(processuses);
+
+            // Assert
+            Assert.AreEqual(serialized, Json);
+        }
+
+        [TestMethod]
+        public void Should_initialize_array_of_processus_When_deserialize_json_string()
+        {
+            // Assert
+            var deserialized = new object();
+
+            // Act
+            ServiceLibrary.JsonParser.Deserialize(Json, out deserialized);
+            var processuses = (ProcessusModel[])deserialized;
+
+            // Assert
+            Assert.AreEqual(processuses.Length, 2);
         }
     }
 }
