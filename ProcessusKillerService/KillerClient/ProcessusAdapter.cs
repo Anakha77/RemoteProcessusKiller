@@ -4,7 +4,6 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using KillerClient.Common;
-using KillerClient.Resources;
 
 namespace KillerClient
 {

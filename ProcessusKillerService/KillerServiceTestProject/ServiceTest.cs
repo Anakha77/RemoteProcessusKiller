@@ -77,7 +77,10 @@ namespace KillerService.TestProject
         {
             // Arrange
             var processuses = new[]
-            {new ProcessusModel {Id = 1, Name = "Processus1"}, new ProcessusModel {Id = 2, Name = "Processus2"}};
+            {
+                new ProcessusModel {Id = 1, Name = "Processus1"},
+                new ProcessusModel {Id = 2, Name = "Processus2"}
+            };
 
             // Act
             var serialized = ServiceLibrary.JsonParser.Serialize(processuses);
@@ -90,7 +93,7 @@ namespace KillerService.TestProject
         public void Should_initialize_array_of_processus_When_deserialize_json_string()
         {
             // Assert
-            var deserialized = new object();
+            object deserialized;
 
             // Act
             ServiceLibrary.JsonParser.Deserialize(Json, out deserialized);
