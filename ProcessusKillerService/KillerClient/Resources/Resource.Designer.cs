@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("KillerClient.Resource", IsApplication=true)]
 
-namespace KillerClient.Resources
+namespace KillerClient
 {
 	
 	
