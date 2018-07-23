@@ -14,7 +14,14 @@ namespace ProcessusKillerService
         /// <returns></returns>
         public ProcessusModel[] GetProcessus()
         {
-            return System.Diagnostics.Process.GetProcesses().Where(p => p.ProcessName != "WindowsKillerService").Select(p => new ProcessusModel {Name = p.ProcessName, Id = p.Id}).ToArray();
+            return System.Diagnostics.Process.GetProcesses()
+                .Where(p => p.ProcessName != "WindowsKillerService" && !string.IsNullOrEmpty(p.MainWindowTitle))
+                .Select(p => new ProcessusModel
+                {
+                    Name = p.ProcessName,
+                    MainWindowTitle = p.MainWindowTitle,
+                    Id = p.Id})
+                .OrderBy(p => p.MainWindowTitle).ToArray();
         }
 
         /// <summary>

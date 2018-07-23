@@ -9,6 +9,9 @@ namespace ProcessusKillerService
         public string Name { get; set; }
 
         [DataMember]
+        public string MainWindowTitle { get; set; }
+
+        [DataMember]
         public int Id { get; set; }
     }
 }
