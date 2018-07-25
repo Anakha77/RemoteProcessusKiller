@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using log4net;
+using ProcessusKillerService.Interfaces;
 
 namespace ProcessusKillerService
 {
@@ -8,20 +9,25 @@ namespace ProcessusKillerService
     {
         public ILog Log { get; set; }
 
+        private readonly IProcessService _processService;
+
+        public KillerService()
+        {
+            var implName = System.Configuration.ConfigurationManager.AppSettings["ProcessServiceImpl"];
+            var implType = Type.GetType(implName);
+            var impl = implType.GetConstructor(Type.EmptyTypes).Invoke(null) as IProcessService;
+            _processService = impl ?? throw new Exception($"Erreur lors du chargement de l'implementation {implName}");
+        }
+
+
+
         /// <summary>
         /// Get all processus running on the computer
         /// </summary>
         /// <returns></returns>
         public ProcessusModel[] GetProcessus()
         {
-            return System.Diagnostics.Process.GetProcesses()
-                .Where(p => p.ProcessName != "WindowsKillerService" && !string.IsNullOrEmpty(p.MainWindowTitle))
-                .Select(p => new ProcessusModel
-                {
-                    Name = p.ProcessName,
-                    MainWindowTitle = p.MainWindowTitle,
-                    Id = p.Id})
-                .OrderBy(p => p.MainWindowTitle).ToArray();
+            return _processService.GetProcessus().ToArray();
         }
 
         /// <summary>
@@ -31,7 +37,7 @@ namespace ProcessusKillerService
         /// <returns>Array of ProcessusModel corresponding to all the processus with de name "name"</returns>
         public ProcessusModel[] GetProcessusByName(string name)
         {
-            return GetProcessus().Where(p => p.Name.Equals(name)).ToArray();
+            return _processService.GetProcessus().Where(p => p.Name.Equals(name)).ToArray();
         }
 
         /// <summary>
@@ -41,7 +47,7 @@ namespace ProcessusKillerService
         /// <returns>ProcessusModel corresponding to the specific processus</returns>
         public ProcessusModel GetProcessusById(int id)
         {
-            return GetProcessus().FirstOrDefault(p => p.Id == id);
+            return _processService.GetProcessus().FirstOrDefault(p => p.Id == id);
         }
 
         /// <summary>
@@ -53,7 +59,7 @@ namespace ProcessusKillerService
         {
             try
             {
-                System.Diagnostics.Process.GetProcessesByName(name).ToList().ForEach(p => p.Kill());
+                _processService.GetProcessus().Where(p => p.Name.Equals(name)).ToList().ForEach(p => _processService.KillProcessus(p.Id));
                 return true;
             }
             catch (Exception ex)
@@ -72,7 +78,7 @@ namespace ProcessusKillerService
         {
             try
             {
-                System.Diagnostics.Process.GetProcessById(id).Kill();
+                _processService.KillProcessus(id);
                 return true;
             }
             catch (Exception ex)

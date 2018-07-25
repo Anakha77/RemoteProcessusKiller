@@ -15,24 +15,29 @@ namespace KillerClient.Common
         public static List<Processus> GetProcessus()
         {
             var processus = GetProcessusModels();
-            return new List<Processus>(processus.Select(p => new Processus { Name = p.Name, Id = p.Id }));
+            return new List<Processus>(processus.Select(p => new Processus
+            {
+                Name = p.Name,
+                MainWindowTitle = p.MainWindowTitle,
+                Id = p.Id }
+            )).OrderBy(p => p.DisplayName).ToList();
         }
 
         public static ProcessusModel[] GetProcessusModels()
         {
-            return GetService().GetProcessus();
+            var service = GetService();
+            var processus = service.GetProcessus();
+            return processus;
         }
 
         public static void StopProcessus(string processusName)
         {
-            bool requestResult, requestResultSpecified;
-            GetService().StopProcessusByName(processusName, out requestResult, out requestResultSpecified);
+            GetService().StopProcessusByName(processusName, out bool requestResult, out bool requestResultSpecified);
         }
 
         public static void StopProcessus(int processusId)
         {
-            bool requestResult, requestResultSpecified;
-            GetService().StopProcessusById(processusId, true, out requestResult, out requestResultSpecified);
+            GetService().StopProcessusById(processusId, true, out bool requestResult, out bool requestResultSpecified);
         }
 
         private static KillerService.KillerService GetService()

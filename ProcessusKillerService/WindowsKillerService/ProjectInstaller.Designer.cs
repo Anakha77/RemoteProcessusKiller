@@ -39,8 +39,10 @@
             // 
             // KillerServiceInstaller
             // 
-            this.KillerServiceInstaller.DisplayName = "Allow browsing processus and killing processus from the list";
+            this.KillerServiceInstaller.DisplayName = "Windows Killer Service";
             this.KillerServiceInstaller.ServiceName = "Windows Killer Service";
+            this.KillerServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
+            this.KillerServiceInstaller.Description = "Allow browsing processus and killing processus from the list";
             // 
             // ProjectInstaller
             // 

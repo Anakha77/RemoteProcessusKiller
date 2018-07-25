@@ -5,11 +5,11 @@
     android:layout_height="match_parent">
     <TextView
         android:text="@string/Server"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lblServer"
-        android:layout_marginTop="21.5dp" />
+        android:layout_marginTop="21.5dp"
+        android:textColor="#ffffffff" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,10 +17,10 @@
         android:layout_marginBottom="24dp" />
     <TextView
         android:text="@string/Port"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lblPort" />
+        android:id="@+id/lblPort"
+        android:textColor="#ffffffff" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -27,13 +27,12 @@ namespace KillerClient
         {
             var process = ListProcessus[position];
 
-            var view = Context.LayoutInflater.Inflate(Resource.Layout.ProcessListItem, parent, false) as LinearLayout;
-            if (view == null) return null;
+            if (!(Context.LayoutInflater.Inflate(Resource.Layout.ProcessListItem, parent, false) is LinearLayout view)) return null;
 
             var txtName = view.FindViewById<TextView>(Resource.Id.NameText);
             var txtId = view.FindViewById<TextView>(Resource.Id.IdText);
 
-            txtName.Text = process.Name;
+            txtName.Text = process.DisplayName;
             txtId.Text = process.Id.ToString();
 
             view.LongClick += ViewOnLongClick;

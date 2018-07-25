@@ -240,6 +240,8 @@ namespace KillerClient.KillerService {
         
         private bool idFieldSpecified;
         
+        private string mainWindowTitleField;
+        
         private string nameField;
         
         /// <remarks/>
@@ -260,6 +262,17 @@ namespace KillerClient.KillerService {
             }
             set {
                 this.idFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string MainWindowTitle {
+            get {
+                return this.mainWindowTitleField;
+            }
+            set {
+                this.mainWindowTitleField = value;
             }
         }
         

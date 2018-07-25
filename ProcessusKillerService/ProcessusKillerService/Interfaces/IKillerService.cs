@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel;
 using log4net;
 
-namespace ProcessusKillerService
+namespace ProcessusKillerService.Interfaces
 {
     [ServiceContract]
     public interface IKillerService
